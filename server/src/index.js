@@ -14,6 +14,10 @@ app.get('/api/health', (req, res) => {
   });
 });
 
+// Import and use the repo routes
+const repoRoutes = require('./routes/repoRoutes');
+app.use('/api/repo', repoRoutes);
+
 // ---- START SERVER ----
 const PORT = process.env.PORT || 3001;
 app.listen(PORT, () => {
